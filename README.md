@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://linkedin.com/in/ausmin-deb">
+  <a href="https://www.linkedin.com/in/ausmindeb">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn profile" />
   </a>
   <a href="mailto:ausmindeb32@gmail.com">
@@ -96,7 +96,7 @@ I am a 3rd-year Integrated MBA student at DBS Global University, Dehradun, major
 ## Contact
 
 <p align="center">
-  <a href="https://linkedin.com/in/ausmin-deb">
+  <a href="https://www.linkedin.com/in/ausmindeb">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect with Ausmin Deb on LinkedIn" />
   </a>
   <a href="mailto:ausmindeb32@gmail.com">
