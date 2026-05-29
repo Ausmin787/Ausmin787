@@ -11,7 +11,7 @@
   <a href="https://www.linkedin.com/in/ausmindeb">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn profile" />
   </a>
-  <a href="mailto:ausmindeb32@gmail.com">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ausmindeb32@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email Ausmin Deb" />
   </a>
   <a href="https://komarev.com/ghpvc/?username=Ausmin787&label=Profile%20views&color=0e75b6&style=flat">
@@ -99,7 +99,7 @@ I am a 3rd-year Integrated MBA student at DBS Global University, Dehradun, major
   <a href="https://www.linkedin.com/in/ausmindeb">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Connect with Ausmin Deb on LinkedIn" />
   </a>
-  <a href="mailto:ausmindeb32@gmail.com">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ausmindeb32@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Ausmin Deb" />
   </a>
   <a href="https://github.com/Ausmin787">
