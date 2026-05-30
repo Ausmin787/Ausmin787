@@ -1,5 +1,3 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:0d2137,100:083344&height=80&section=header" alt="header wave" />
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-banner-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile-banner-light.svg" />
@@ -164,5 +162,3 @@ I am a 3rd-year Integrated MBA student at DBS Global University, Dehradun, major
 <p align="center">
   <i>Data is useful when it changes the decision.</i>
 </p>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:083344,50:0d2137,100:0D1117&height=80&section=footer" alt="footer wave" />
