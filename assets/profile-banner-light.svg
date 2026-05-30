@@ -1,75 +1,143 @@
 <svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-l desc-l">
-  <title id="title-l">Ausmin Deb data analytics profile banner — light theme</title>
-  <desc id="desc-l">A light technical dashboard banner with data grid lines, chart panels, and portfolio metrics.</desc>
+  <title id="title-l">Ausmin Deb — Data Analytics Profile (light)</title>
+  <desc id="desc-l">Animated light dashboard banner for Ausmin Deb's data analytics portfolio.</desc>
+
   <defs>
     <linearGradient id="bgl" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#EBF4FF"/>
-      <stop offset="0.48" stop-color="#F0F7FF"/>
-      <stop offset="1" stop-color="#E8F5F0"/>
+      <stop offset="0" stop-color="#E8F4FD"/>
+      <stop offset="0.5" stop-color="#F0F7FF"/>
+      <stop offset="1" stop-color="#E6F3EE"/>
     </linearGradient>
-    <linearGradient id="accentl" x1="136" y1="72" x2="1060" y2="310" gradientUnits="userSpaceOnUse">
+
+    <radialGradient id="ab1l" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0EA5E9" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ab2l" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ab3l" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.11"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="gridl" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0 L0 0 0 42" stroke="#2563EB" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+
+    <linearGradient id="acll" x1="90" y1="275" x2="1110" y2="66" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#0EA5E9"/>
       <stop offset="0.55" stop-color="#22C55E"/>
       <stop offset="1" stop-color="#F59E0B"/>
     </linearGradient>
-    <pattern id="gridl" width="42" height="42" patternUnits="userSpaceOnUse">
-      <path d="M 42 0 L 0 0 0 42" stroke="#2563EB" stroke-opacity="0.07" stroke-width="1"/>
-    </pattern>
-    <filter id="glowl" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="7" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.65 0 0 0 0 0.91 0 0 0 0.35 0"/>
-      <feMerge>
-        <feMergeNode/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+    <filter id="lgl" x="-10%" y="-100%" width="120%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feColorMatrix in="b" values="0 0 0 0 0.06  0 0 0 0 0.65  0 0 0 0 0.91  0 0 0 0.38 0" result="c"/>
+      <feMerge><feMergeNode in="c"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+
+    <linearGradient id="ngl" x1="108" y1="0" x2="500" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0284C7"/>
+      <stop offset="0.55" stop-color="#16A34A"/>
+      <stop offset="1" stop-color="#D97706"/>
+    </linearGradient>
   </defs>
 
+  <style>
+    .tll { stroke-dasharray: 1500; stroke-dashoffset: 1500; animation: dll 2.5s ease-out 0.5s forwards; }
+    @keyframes dll { to { stroke-dashoffset: 0; } }
+    @keyframes cgl { 0%,100%{opacity:.35} 50%{opacity:1} }
+    .cbl1 { animation: cgl 3s ease-in-out infinite; }
+    .cbl2 { animation: cgl 3s ease-in-out 1s infinite; }
+    .cbl3 { animation: cgl 3s ease-in-out 2s infinite; }
+  </style>
+
+  <!-- Background -->
   <rect width="1200" height="360" rx="28" fill="url(#bgl)"/>
   <rect width="1200" height="360" rx="28" fill="url(#gridl)"/>
-  <path d="M90 275 C190 205 260 224 345 176 C435 125 520 128 620 155 C724 184 780 112 875 96 C972 80 1048 118 1110 66" stroke="url(#accentl)" stroke-width="4" stroke-linecap="round" filter="url(#glowl)"/>
-  <path d="M90 275 C190 205 260 224 345 176 C435 125 520 128 620 155 C724 184 780 112 875 96 C972 80 1048 118 1110 66" stroke="#1e3a5f" stroke-opacity="0.25" stroke-width="1.4" stroke-linecap="round"/>
 
-  <g opacity="0.95">
-    <rect x="76" y="66" width="468" height="190" rx="20" fill="#FFFFFF" fill-opacity="0.88" stroke="#0EA5E9" stroke-opacity="0.38"/>
-    <text x="108" y="113" fill="#1e293b" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="38" font-weight="700">Ausmin Deb</text>
-    <text x="108" y="152" fill="#065f46" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="20" font-weight="600">Aspiring Data Analyst</text>
-    <text x="108" y="188" fill="#475569" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18">Python  |  SQL  |  Excel  |  Power BI</text>
-    <rect x="108" y="215" width="196" height="2" fill="#0EA5E9"/>
-    <rect x="318" y="215" width="76" height="2" fill="#22C55E"/>
-    <rect x="408" y="215" width="44" height="2" fill="#F59E0B"/>
-  </g>
+  <!-- Aurora blobs -->
+  <ellipse cx="180" cy="130" rx="320" ry="220" fill="url(#ab1l)"/>
+  <ellipse cx="640" cy="350" rx="300" ry="180" fill="url(#ab2l)"/>
+  <ellipse cx="1070" cy="85" rx="270" ry="200" fill="url(#ab3l)"/>
 
-  <g font-family="Segoe UI, Inter, Arial, sans-serif">
-    <rect x="628" y="70" width="146" height="92" rx="16" fill="#FFFFFF" fill-opacity="0.92" stroke="#0EA5E9" stroke-opacity="0.42"/>
-    <text x="654" y="112" fill="#1e293b" font-size="28" font-weight="700">150K+</text>
-    <text x="654" y="139" fill="#64748B" font-size="14">loan records</text>
+  <!-- Line: static glow base -->
+  <path d="M90 275 C190 205 260 224 345 176 C435 125 520 128 620 155 C724 184 780 112 875 96 C972 80 1048 118 1110 66"
+    stroke="url(#acll)" stroke-width="10" stroke-opacity="0.15" stroke-linecap="round" filter="url(#lgl)"/>
+  <!-- Line: animated draw -->
+  <path class="tll" d="M90 275 C190 205 260 224 345 176 C435 125 520 128 620 155 C724 184 780 112 875 96 C972 80 1048 118 1110 66"
+    stroke="url(#acll)" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Line: dark shimmer -->
+  <path d="M90 275 C190 205 260 224 345 176 C435 125 520 128 620 155 C724 184 780 112 875 96 C972 80 1048 118 1110 66"
+    stroke="#1e3a5f" stroke-opacity="0.14" stroke-width="1" stroke-linecap="round"/>
 
-    <rect x="802" y="70" width="146" height="92" rx="16" fill="#FFFFFF" fill-opacity="0.92" stroke="#22C55E" stroke-opacity="0.42"/>
-    <text x="828" y="112" fill="#1e293b" font-size="28" font-weight="700">725K</text>
-    <text x="828" y="139" fill="#64748B" font-size="14">transactions</text>
+  <!-- Identity card -->
+  <rect x="76" y="66" width="468" height="190" rx="20" fill="#FFFFFF" fill-opacity="0.88" stroke="#0EA5E9" stroke-opacity="0.32"/>
+  <text x="108" y="113" fill="url(#ngl)" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="38" font-weight="700">Ausmin Deb</text>
+  <text x="108" y="152" fill="#065F46" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="20" font-weight="600">Aspiring Data Analyst</text>
+  <text x="108" y="188" fill="#475569" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="18">Python  |  SQL  |  Excel  |  Power BI</text>
+  <rect x="108" y="215" width="196" height="2" fill="#0EA5E9"/>
+  <rect x="318" y="215" width="76" height="2" fill="#22C55E"/>
+  <rect x="408" y="215" width="44" height="2" fill="#F59E0B"/>
 
-    <rect x="976" y="70" width="146" height="92" rx="16" fill="#FFFFFF" fill-opacity="0.92" stroke="#F59E0B" stroke-opacity="0.42"/>
-    <text x="1002" y="112" fill="#1e293b" font-size="28" font-weight="700">10K</text>
-    <text x="1002" y="139" fill="#64748B" font-size="14">churn records</text>
-  </g>
+  <!-- Stat card 1: 150K+ -->
+  <rect x="628" y="70" width="146" height="92" rx="16" fill="#FFFFFF" fill-opacity="0.92"/>
+  <rect x="628" y="70" width="146" height="92" rx="16" fill="none" stroke="#0EA5E9" stroke-width="1.5" class="cbl1"/>
+  <text x="654" y="112" fill="#1e293b" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="700">150K+</text>
+  <text x="654" y="139" fill="#64748B" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14">loan records</text>
 
-  <g opacity="0.9">
-    <rect x="630" y="205" width="490" height="82" rx="18" fill="#FFFFFF" fill-opacity="0.78" stroke="#CBD5E1" stroke-opacity="0.55"/>
-    <path d="M664 253 L705 231 L748 244 L790 218 L835 235 L884 213 L935 226 L981 205 L1035 219 L1085 196" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-    <g fill="#22C55E">
-      <circle cx="705" cy="231" r="4"/>
-      <circle cx="790" cy="218" r="4"/>
-      <circle cx="884" cy="213" r="4"/>
-      <circle cx="981" cy="205" r="4"/>
-      <circle cx="1085" cy="196" r="4"/>
-    </g>
-    <g fill="#F59E0B" opacity="0.9">
-      <rect x="664" y="266" width="42" height="8" rx="4"/>
-      <rect x="724" y="266" width="68" height="8" rx="4"/>
-      <rect x="810" y="266" width="52" height="8" rx="4"/>
-      <rect x="880" y="266" width="86" height="8" rx="4"/>
-      <rect x="984" y="266" width="104" height="8" rx="4"/>
-    </g>
-  </g>
+  <!-- Stat card 2: 725K -->
+  <rect x="802" y="70" width="146" height="92" rx="16" fill="#FFFFFF" fill-opacity="0.92"/>
+  <rect x="802" y="70" width="146" height="92" rx="16" fill="none" stroke="#22C55E" stroke-width="1.5" class="cbl2"/>
+  <text x="828" y="112" fill="#1e293b" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="700">725K</text>
+  <text x="828" y="139" fill="#64748B" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14">transactions</text>
+
+  <!-- Stat card 3: 10K -->
+  <rect x="976" y="70" width="146" height="92" rx="16" fill="#FFFFFF" fill-opacity="0.92"/>
+  <rect x="976" y="70" width="146" height="92" rx="16" fill="none" stroke="#F59E0B" stroke-width="1.5" class="cbl3"/>
+  <text x="1002" y="112" fill="#1e293b" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="700">10K</text>
+  <text x="1002" y="139" fill="#64748B" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14">churn records</text>
+
+  <!-- Mini chart panel -->
+  <rect x="630" y="205" width="490" height="82" rx="18" fill="#FFFFFF" fill-opacity="0.72" stroke="#CBD5E1" stroke-opacity="0.50"/>
+  <path d="M664 253 L705 231 L748 244 L790 218 L835 235 L884 213 L935 226 L981 205 L1035 219 L1085 196"
+    stroke="#0EA5E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Pulse rings (SMIL) -->
+  <circle cx="705" cy="231" r="4" fill="none" stroke="#22C55E" stroke-width="1.5">
+    <animate attributeName="r" values="4;15;4" dur="2s" begin="0s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="790" cy="218" r="4" fill="none" stroke="#22C55E" stroke-width="1.5">
+    <animate attributeName="r" values="4;15;4" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="884" cy="213" r="4" fill="none" stroke="#22C55E" stroke-width="1.5">
+    <animate attributeName="r" values="4;15;4" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="981" cy="205" r="4" fill="none" stroke="#22C55E" stroke-width="1.5">
+    <animate attributeName="r" values="4;15;4" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1085" cy="196" r="4" fill="none" stroke="#22C55E" stroke-width="1.5">
+    <animate attributeName="r" values="4;15;4" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Solid dots on top -->
+  <circle cx="705" cy="231" r="4" fill="#22C55E"/>
+  <circle cx="790" cy="218" r="4" fill="#22C55E"/>
+  <circle cx="884" cy="213" r="4" fill="#22C55E"/>
+  <circle cx="981" cy="205" r="4" fill="#22C55E"/>
+  <circle cx="1085" cy="196" r="4" fill="#22C55E"/>
+
+  <!-- Bar stubs -->
+  <rect x="664" y="266" width="42" height="8" rx="4" fill="#F59E0B" opacity="0.80"/>
+  <rect x="724" y="266" width="68" height="8" rx="4" fill="#F59E0B" opacity="0.80"/>
+  <rect x="810" y="266" width="52" height="8" rx="4" fill="#F59E0B" opacity="0.80"/>
+  <rect x="880" y="266" width="86" height="8" rx="4" fill="#F59E0B" opacity="0.80"/>
+  <rect x="984" y="266" width="104" height="8" rx="4" fill="#F59E0B" opacity="0.80"/>
 </svg>
