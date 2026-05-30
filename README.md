@@ -1,3 +1,4 @@
+<!-- -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-banner-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/profile-banner-light.svg" />
