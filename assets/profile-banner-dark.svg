@@ -43,6 +43,10 @@
       <stop offset="0.55" stop-color="#A3E635"/>
       <stop offset="1" stop-color="#F5C842"/>
     </linearGradient>
+
+    <clipPath id="cc">
+      <rect x="630" y="205" width="490" height="82" rx="18"/>
+    </clipPath>
   </defs>
 
   <style>
@@ -100,44 +104,48 @@
   <text x="1002" y="112" fill="#E6F6FF" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="28" font-weight="700">10K</text>
   <text x="1002" y="139" fill="#B9C8D8" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="14">churn records</text>
 
-  <!-- Mini chart panel -->
+  <!-- Mini chart: panel background + border (outside clip so border is always fully visible) -->
   <rect x="630" y="205" width="490" height="82" rx="18" fill="#0A1322" fill-opacity="0.70" stroke="#91A4B7" stroke-opacity="0.16"/>
-  <path d="M664 253 L705 231 L748 244 L790 218 L835 235 L884 213 L935 226 L981 205 L1035 219 L1085 196"
-    stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Pulse rings (SMIL) -->
-  <circle cx="705" cy="231" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
-    <animate attributeName="r" values="4;15;4" dur="2s" begin="0s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="790" cy="218" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
-    <animate attributeName="r" values="4;15;4" dur="2s" begin="0.4s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0.4s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="884" cy="213" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
-    <animate attributeName="r" values="4;15;4" dur="2s" begin="0.8s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0.8s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="981" cy="205" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
-    <animate attributeName="r" values="4;15;4" dur="2s" begin="1.2s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="1085" cy="196" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
-    <animate attributeName="r" values="4;15;4" dur="2s" begin="1.6s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="1.6s" repeatCount="indefinite"/>
-  </circle>
+  <!-- Chart contents clipped to panel bounds -->
+  <g clip-path="url(#cc)">
+    <path d="M664 253 L705 237 L748 248 L790 228 L835 242 L884 222 L935 234 L981 215 L1035 227 L1085 213"
+      stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Solid dots on top -->
-  <circle cx="705" cy="231" r="4" fill="#A3E635"/>
-  <circle cx="790" cy="218" r="4" fill="#A3E635"/>
-  <circle cx="884" cy="213" r="4" fill="#A3E635"/>
-  <circle cx="981" cy="205" r="4" fill="#A3E635"/>
-  <circle cx="1085" cy="196" r="4" fill="#A3E635"/>
+    <!-- Pulse rings -->
+    <circle cx="705" cy="237" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
+      <animate attributeName="r" values="4;14;4" dur="2s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="790" cy="228" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
+      <animate attributeName="r" values="4;14;4" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="884" cy="222" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
+      <animate attributeName="r" values="4;14;4" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="981" cy="215" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
+      <animate attributeName="r" values="4;14;4" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1085" cy="213" r="4" fill="none" stroke="#A3E635" stroke-width="1.5">
+      <animate attributeName="r" values="4;14;4" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+    </circle>
 
-  <!-- Bar stubs -->
-  <rect x="664" y="266" width="42" height="8" rx="4" fill="#F59E0B" opacity="0.85"/>
-  <rect x="724" y="266" width="68" height="8" rx="4" fill="#F59E0B" opacity="0.85"/>
-  <rect x="810" y="266" width="52" height="8" rx="4" fill="#F59E0B" opacity="0.85"/>
-  <rect x="880" y="266" width="86" height="8" rx="4" fill="#F59E0B" opacity="0.85"/>
-  <rect x="984" y="266" width="104" height="8" rx="4" fill="#F59E0B" opacity="0.85"/>
+    <!-- Solid dots -->
+    <circle cx="705" cy="237" r="4" fill="#A3E635"/>
+    <circle cx="790" cy="228" r="4" fill="#A3E635"/>
+    <circle cx="884" cy="222" r="4" fill="#A3E635"/>
+    <circle cx="981" cy="215" r="4" fill="#A3E635"/>
+    <circle cx="1085" cy="213" r="4" fill="#A3E635"/>
+
+    <!-- Bar stubs -->
+    <rect x="664" y="268" width="42" height="7" rx="3" fill="#F59E0B" opacity="0.85"/>
+    <rect x="724" y="268" width="68" height="7" rx="3" fill="#F59E0B" opacity="0.85"/>
+    <rect x="810" y="268" width="52" height="7" rx="3" fill="#F59E0B" opacity="0.85"/>
+    <rect x="880" y="268" width="86" height="7" rx="3" fill="#F59E0B" opacity="0.85"/>
+    <rect x="984" y="268" width="104" height="7" rx="3" fill="#F59E0B" opacity="0.85"/>
+  </g>
 </svg>
