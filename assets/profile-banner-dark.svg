@@ -27,9 +27,27 @@
       <stop offset="1" stop-color="#C4B5FD"/>
     </linearGradient>
 
+    <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0891B2" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0891B2" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="cardAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+
     <pattern id="microGrid" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M36 0 L0 0 0 36" stroke="#CBD5E1" stroke-opacity="0.055" stroke-width="1"/>
-      <circle cx="0" cy="0" r="1" fill="#94A3B8" fill-opacity="0.12"/>
+      <path d="M36 0 L0 0 0 36" stroke="#CBD5E1" stroke-opacity="0.045" stroke-width="1"/>
+      <circle cx="0" cy="0" r="1" fill="#94A3B8" fill-opacity="0.10"/>
     </pattern>
 
     <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
@@ -44,86 +62,149 @@
   </defs>
 
   <style>
-    .edge { stroke-dasharray: 9 16; animation: flow 9s linear infinite; }
-    .edgeSlow { stroke-dasharray: 5 20; animation: flow 13s linear infinite reverse; }
-    .edgePulse { animation: edgePulse 4.8s ease-in-out infinite; }
-    .node { transform-box: fill-box; transform-origin: center; animation: nodePulse 4.2s ease-in-out infinite; }
-    .node2 { animation-delay: .7s; }
-    .node3 { animation-delay: 1.4s; }
-    .node4 { animation-delay: 2.1s; }
-    .halo { transform-box: fill-box; transform-origin: center; animation: haloPulse 3.8s ease-out infinite; }
+    .ep  { animation: edgePulse 4.8s ease-in-out infinite; }
+    .ep2 { animation: edgePulse 6.2s ease-in-out 1.4s infinite; }
+    .halo  { transform-box: fill-box; transform-origin: center; animation: haloPulse 3.8s ease-out infinite; }
     .halo2 { animation-delay: 1.1s; }
     .halo3 { animation-delay: 2.2s; }
-    .scan { animation: scanMove 6s ease-in-out infinite; }
-    @keyframes flow { to { stroke-dashoffset: -220; } }
-    @keyframes edgePulse { 0%,100% { opacity: .28; } 50% { opacity: .95; } }
-    @keyframes nodePulse { 0%,100% { opacity: .64; transform: scale(1); } 50% { opacity: 1; transform: scale(1.22); } }
-    @keyframes haloPulse { 0% { opacity: .42; transform: scale(.72); } 100% { opacity: 0; transform: scale(2.2); } }
-    @keyframes scanMove { 0%,100% { transform: translateX(-180px); opacity: .08; } 50% { transform: translateX(180px); opacity: .16; } }
+    .cardBorder { animation: cardBreath 4s ease-in-out infinite; }
+    .orb1 { animation: orbPulse  9s ease-in-out       infinite; }
+    .orb2 { animation: orbPulse 13s ease-in-out  3s   infinite; }
+    .orb3 { animation: orbPulse 11s ease-in-out  6s   infinite; }
+    @keyframes edgePulse  { 0%,100% { opacity: .20; } 50% { opacity: .78; } }
+    @keyframes haloPulse  { 0% { opacity: .45; transform: scale(.7); } 100% { opacity: 0; transform: scale(2.4); } }
+    @keyframes cardBreath { 0%,100% { stroke-opacity: .18; } 50% { stroke-opacity: .52; } }
+    @keyframes orbPulse   { 0%,100% { opacity: .60; } 50% { opacity: 1; } }
   </style>
 
+  <!-- Base -->
   <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
   <rect width="1200" height="360" rx="28" fill="url(#microGrid)"/>
 
-  <g opacity="0.42">
-    <path d="M0 82 H1200" stroke="#93C5FD" stroke-opacity="0.05"/>
-    <path d="M0 181 H1200" stroke="#93C5FD" stroke-opacity="0.07"/>
-    <path d="M0 278 H1200" stroke="#93C5FD" stroke-opacity="0.05"/>
-  </g>
+  <!-- Aurora depth blobs -->
+  <ellipse cx="160"  cy="170" rx="320" ry="230" fill="url(#orb1)" class="orb1"/>
+  <ellipse cx="660"  cy="70"  rx="280" ry="190" fill="url(#orb2)" class="orb2"/>
+  <ellipse cx="1060" cy="250" rx="300" ry="210" fill="url(#orb3)" class="orb3"/>
 
+  <!-- Extra faint static paths for network density -->
+  <path d="M0 140 C200 80 420 130 600 100 S900 140 1200 110"   stroke="#38BDF8" stroke-opacity="0.06" stroke-width="1.5" fill="none"/>
+  <path d="M0 240 C180 300 380 210 580 260 S900 190 1200 230"  stroke="#8B5CF6" stroke-opacity="0.05" stroke-width="1.5" fill="none"/>
+  <path d="M80 330 C260 250 460 310 640 270 S900 310 1120 250" stroke="#60A5FA" stroke-opacity="0.05" stroke-width="1"   fill="none"/>
+
+  <!-- Main network paths — slow opacity pulse, no dash clutter -->
   <g stroke-linecap="round" stroke-linejoin="round">
-    <path class="edge edgePulse" d="M78 92 C170 50 245 70 320 126 S466 208 560 174 S748 74 860 106 S1018 210 1126 166" stroke="url(#edgeBlue)" stroke-width="2"/>
-    <path class="edgeSlow edgePulse" d="M92 266 C190 198 250 236 340 188 S492 88 596 122 S760 260 868 214 S1034 96 1134 126" stroke="url(#edgeHot)" stroke-width="2"/>
-    <path class="edge" d="M150 174 C242 106 330 106 426 150 S604 246 700 188 S858 88 1000 188" stroke="#38BDF8" stroke-opacity="0.34" stroke-width="1.6"/>
-    <path class="edgeSlow" d="M206 310 C320 258 410 282 512 228 S662 120 780 150 S944 258 1088 226" stroke="#A78BFA" stroke-opacity="0.38" stroke-width="1.6"/>
-    <path class="edge" d="M196 54 C292 116 386 78 490 116 S668 230 778 186 S934 44 1038 74" stroke="#E0F2FE" stroke-opacity="0.22" stroke-width="1.4"/>
+    <path class="ep"  d="M78 92 C170 50 245 70 320 126 S466 208 560 174 S748 74 860 106 S1018 210 1126 166"  stroke="url(#edgeBlue)" stroke-width="2"   fill="none"/>
+    <path class="ep2" d="M92 266 C190 198 250 236 340 188 S492 88 596 122 S760 260 868 214 S1034 96 1134 126" stroke="url(#edgeHot)"  stroke-width="2"   fill="none"/>
+    <path class="ep"  d="M150 174 C242 106 330 106 426 150 S604 246 700 188 S858 88 1000 188"                 stroke="#38BDF8" stroke-opacity="0.34" stroke-width="1.6" fill="none"/>
+    <path class="ep2" d="M206 310 C320 258 410 282 512 228 S662 120 780 150 S944 258 1088 226"                stroke="#A78BFA" stroke-opacity="0.38" stroke-width="1.6" fill="none"/>
+    <path class="ep"  d="M196 54 C292 116 386 78 490 116 S668 230 778 186 S934 44 1038 74"                    stroke="#E0F2FE" stroke-opacity="0.22" stroke-width="1.4" fill="none"/>
   </g>
 
+  <!-- Traveling signal pulses — single dot per path, staggered timing -->
+  <path d="M78 92 C170 50 245 70 320 126 S466 208 560 174 S748 74 860 106 S1018 210 1126 166"
+        stroke="#60A5FA" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="18 1200">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1218" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M92 266 C190 198 250 236 340 188 S492 88 596 122 S760 260 868 214 S1034 96 1134 126"
+        stroke="#C084FC" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="18 1200">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1218" dur="6.5s" begin="1.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M150 174 C242 106 330 106 426 150 S604 246 700 188 S858 88 1000 188"
+        stroke="#22D3EE" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="14 1200">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1214" dur="4.5s" begin="3.2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M206 310 C320 258 410 282 512 228 S662 120 780 150 S944 258 1088 226"
+        stroke="#A78BFA" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="14 1200">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1214" dur="7s" begin="0.6s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Halos + nodes (SMIL-based r pulse for renderer compatibility) -->
   <g filter="url(#softGlow)">
-    <circle class="halo" cx="188" cy="88" r="10" stroke="#38BDF8" stroke-width="2"/>
-    <circle class="halo halo2" cx="342" cy="188" r="11" stroke="#A78BFA" stroke-width="2"/>
-    <circle class="halo halo3" cx="870" cy="106" r="10" stroke="#60A5FA" stroke-width="2"/>
-    <circle class="halo halo2" cx="1008" cy="188" r="11" stroke="#C084FC" stroke-width="2"/>
+    <circle class="halo"       cx="188"  cy="88"  r="10" stroke="#38BDF8" stroke-width="2" fill="none"/>
+    <circle class="halo halo2" cx="342"  cy="188" r="11" stroke="#A78BFA" stroke-width="2" fill="none"/>
+    <circle class="halo halo3" cx="870"  cy="106" r="10" stroke="#60A5FA" stroke-width="2" fill="none"/>
+    <circle class="halo halo2" cx="1008" cy="188" r="11" stroke="#C084FC" stroke-width="2" fill="none"/>
 
-    <circle class="node" cx="78" cy="92" r="4.5" fill="#38BDF8"/>
-    <circle class="node node2" cx="188" cy="88" r="7" fill="#E0F2FE"/>
-    <circle class="node node3" cx="320" cy="126" r="5.5" fill="#8B5CF6"/>
-    <circle class="node node4" cx="342" cy="188" r="8" fill="#A78BFA"/>
-    <circle class="node" cx="560" cy="174" r="5" fill="#38BDF8"/>
-    <circle class="node node2" cx="596" cy="122" r="6" fill="#C4B5FD"/>
-    <circle class="node node3" cx="700" cy="188" r="5" fill="#60A5FA"/>
-    <circle class="node node4" cx="860" cy="106" r="7" fill="#E0F2FE"/>
-    <circle class="node" cx="868" cy="214" r="5.5" fill="#8B5CF6"/>
-    <circle class="node node2" cx="1008" cy="188" r="8" fill="#C084FC"/>
-    <circle class="node node3" cx="1126" cy="166" r="5" fill="#38BDF8"/>
-    <circle class="node node4" cx="1134" cy="126" r="4.5" fill="#93C5FD"/>
+    <circle cx="78"  cy="92"  r="4.5" fill="#38BDF8">
+      <animate attributeName="r"            values="4;6.5;4"     dur="4.2s"          repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s"          repeatCount="indefinite"/>
+    </circle>
+    <circle cx="188" cy="88"  r="7"   fill="#E0F2FE">
+      <animate attributeName="r"            values="5.5;8;5.5"   dur="4.2s" begin=".7s"  repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin=".7s"  repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="126" r="5.5" fill="#8B5CF6">
+      <animate attributeName="r"            values="4.5;7;4.5"   dur="4.2s" begin="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="342" cy="188" r="8"   fill="#A78BFA">
+      <animate attributeName="r"            values="6.5;9.5;6.5" dur="4.2s" begin="2.1s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin="2.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="560" cy="174" r="5"   fill="#38BDF8">
+      <animate attributeName="r"            values="4;6.5;4"     dur="4.2s" begin=".3s"  repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin=".3s"  repeatCount="indefinite"/>
+    </circle>
+    <circle cx="596" cy="122" r="6"   fill="#C4B5FD">
+      <animate attributeName="r"            values="4.5;7;4.5"   dur="4.2s" begin="1.0s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin="1.0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="188" r="5"   fill="#60A5FA">
+      <animate attributeName="r"            values="4;6.5;4"     dur="4.2s" begin="1.7s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin="1.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="860" cy="106" r="7"   fill="#E0F2FE">
+      <animate attributeName="r"            values="5.5;8;5.5"   dur="4.2s" begin="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="868" cy="214" r="5.5" fill="#8B5CF6">
+      <animate attributeName="r"            values="4.5;7;4.5"   dur="4.2s" begin=".5s"  repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin=".5s"  repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1008" cy="188" r="8"  fill="#C084FC">
+      <animate attributeName="r"            values="6.5;9.5;6.5" dur="4.2s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1126" cy="166" r="5"  fill="#38BDF8">
+      <animate attributeName="r"            values="4;6.5;4"     dur="4.2s" begin="1.9s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin="1.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1134" cy="126" r="4.5" fill="#93C5FD">
+      <animate attributeName="r"            values="3.5;6;3.5"   dur="4.2s" begin="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values=".6;1;.6"     dur="4.2s" begin="2.6s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
+  <!-- Ambient scatter dots -->
   <g opacity="0.58">
-    <circle cx="238" cy="250" r="2.5" fill="#93C5FD"/>
-    <circle cx="274" cy="42" r="2" fill="#A78BFA"/>
-    <circle cx="454" cy="70" r="2.3" fill="#38BDF8"/>
-    <circle cx="754" cy="54" r="2" fill="#C4B5FD"/>
-    <circle cx="928" cy="302" r="2.5" fill="#93C5FD"/>
-    <circle cx="1054" cy="272" r="2" fill="#38BDF8"/>
+    <circle cx="238"  cy="250" r="2.5" fill="#93C5FD"/>
+    <circle cx="274"  cy="42"  r="2"   fill="#A78BFA"/>
+    <circle cx="454"  cy="70"  r="2.3" fill="#38BDF8"/>
+    <circle cx="754"  cy="54"  r="2"   fill="#C4B5FD"/>
+    <circle cx="928"  cy="302" r="2.5" fill="#93C5FD"/>
+    <circle cx="1054" cy="272" r="2"   fill="#38BDF8"/>
   </g>
 
-  <g class="scan">
-    <rect x="430" y="58" width="340" height="232" rx="34" fill="#E0F2FE" opacity="0.08"/>
-  </g>
+  <!-- Focal glow behind card -->
+  <ellipse cx="600" cy="179" rx="280" ry="160" fill="url(#cardAura)"/>
 
+  <!-- Glass card -->
   <g filter="url(#glassShadow)">
-    <rect x="366" y="84" width="468" height="190" rx="28" fill="#0F172A" fill-opacity="0.74" stroke="#93C5FD" stroke-opacity="0.24"/>
-    <rect x="382" y="100" width="436" height="158" rx="21" fill="#111827" fill-opacity="0.38" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <rect x="366" y="84"  width="468" height="190" rx="28" fill="#0F172A" fill-opacity="0.78"/>
+    <rect x="366" y="84"  width="468" height="190" rx="28" fill="none" stroke="#93C5FD" stroke-width="1.5" class="cardBorder"/>
+    <rect x="382" y="100" width="436" height="158" rx="21" fill="#111827" fill-opacity="0.38" stroke="#FFFFFF" stroke-opacity="0.08"/>
+    <rect x="383" y="101" width="434" height="1"   fill="#FFFFFF" fill-opacity="0.10"/>
+
     <text x="600" y="151" text-anchor="middle" fill="url(#nameGradient)" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="44" font-weight="800">Ausmin Deb</text>
-    <text x="600" y="190" text-anchor="middle" fill="#BAE6FD" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="20" font-weight="650">Aspiring Data Analyst</text>
-    <text x="600" y="222" text-anchor="middle" fill="#CBD5E1" font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16">Python | SQL | Excel | Power BI</text>
+    <text x="600" y="190" text-anchor="middle" fill="#BAE6FD"  font-family="Segoe UI, Inter, Arial, sans-serif" font-size="20" font-weight="600">Aspiring Data Analyst</text>
+    <text x="600" y="222" text-anchor="middle" fill="#CBD5E1"  font-family="Segoe UI, Inter, Arial, sans-serif" font-size="16">Python · SQL · Excel · Power BI</text>
     <path d="M476 239 H724" stroke="#60A5FA" stroke-width="2" stroke-linecap="round"/>
     <path d="M526 249 H674" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" opacity="0.72"/>
   </g>
 
+  <!-- Domain labels -->
   <g font-family="Segoe UI, Inter, Arial, sans-serif" font-size="12" fill="#94A3B8" opacity="0.75">
-    <text x="96" y="326">churn signals</text>
+    <text x="96"  y="326">churn signals</text>
     <text x="956" y="44">risk clusters</text>
     <text x="980" y="326">retail segments</text>
   </g>
