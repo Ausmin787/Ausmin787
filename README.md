@@ -107,13 +107,13 @@ I am a 3rd-year Integrated MBA student at DBS Global University, Dehradun, major
 ## GitHub Activity
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Ausmin787&theme=onedark&no-frame=true&row=1&column=6&margin-w=8" alt="GitHub trophies" />
+  <img src="https://github-profile-trophy-liard.vercel.app/?username=Ausmin787&theme=onedark&no-frame=true&row=1&column=6&margin-w=8" alt="GitHub trophies" />
 </p>
 
 <br />
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Ausmin787&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true" alt="GitHub stats" />
+  <img src="https://github-readme-stats-salesp07.vercel.app/api?username=Ausmin787&show_icons=true&theme=github_dark&hide_border=true&count_private=true" alt="GitHub stats" />
 </p>
 
 <br />
