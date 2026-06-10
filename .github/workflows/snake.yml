@@ -38,11 +38,11 @@ jobs:
 
           mkdir -p /tmp/snake-dist
           cp -R dist/. /tmp/snake-dist/
+          rm -rf dist
 
           git fetch origin output
           git switch --force-create output origin/output
           git rm -r --ignore-unmatch .
-          rm -rf dist
           cp -R /tmp/snake-dist/. .
           git add .
 
