@@ -31,14 +31,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
+          mkdir -p /tmp/snake-dist
+          cp -R dist/. /tmp/snake-dist/
+
+          mkdir -p /tmp/snake-publish
+          cd /tmp/snake-publish
           git init
           git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          mkdir -p /tmp/snake-dist
-          cp -R dist/. /tmp/snake-dist/
-          rm -rf dist
 
           git fetch origin output
           git switch --force-create output origin/output
